@@ -12,7 +12,7 @@ import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
 
 
-
+console.log("start app");
 
 const store = configureStore();
 
