@@ -40,7 +40,7 @@
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "uuid": "^3.3.2",
-    "webpack": "^4.25.1",
+    "webpack": "^4.25.1"
   },
   "devDependencies": {
     "enzyme": "3.0.0",
