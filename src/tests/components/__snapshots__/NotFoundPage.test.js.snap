@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render NotFoundPage correctly 1`] = `
+<div>
+  404 THis if from my not found comp 
+  <Link
+    replace={false}
+    to="/"
+  >
+     Dashboard 
+  </Link>
+</div>
+`;
