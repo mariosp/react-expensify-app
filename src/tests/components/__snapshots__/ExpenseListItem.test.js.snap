@@ -2,6 +2,7 @@
 
 exports[`should render ExpenseListItem with expense 1`] = `
 <div>
+  fr
   <Link
     replace={false}
     to="/edit/1"
@@ -11,9 +12,12 @@ exports[`should render ExpenseListItem with expense 1`] = `
     </h2>
   </Link>
   <p>
-    109500
-     - 
-    0
+    € 1 095,00
+     
+    <br />
+    - 
+    <br />
+    January 1st, 1970
   </p>
 </div>
 `;
