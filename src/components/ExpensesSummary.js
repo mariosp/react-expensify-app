@@ -10,6 +10,7 @@ import 'numeral/locales/fr';
 export const ExpensesSummary = (props)=>(
 
     <div>
+    {numeral.locale('fr')}
         <h2>Viewing {props.expenses.length} expenses totalling {numeral(props.total/100).format('$ #,##0.00')} </h2>
     </div>
 
