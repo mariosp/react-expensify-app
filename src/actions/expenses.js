@@ -50,10 +50,8 @@ export const addExpense = (expense) => ({
 
     };
 
-
-
-
   };
+
   
   // EDIT_EXPENSE
   export const editExpense = (id, updates) => ({
@@ -61,6 +59,24 @@ export const addExpense = (expense) => ({
     id,
     updates
   });
+
+  //START EDIT_EXPENSE
+  export const startEditExpense = (id,updates) =>{
+
+    return (dispatch)=>{
+
+      return database.ref('expense/'+id).update(updates).then(()=>{
+
+        dispatch(editExpense(id,updates));
+
+      });
+
+    };
+
+
+
+
+  };
 
 
   //SET_EXPSENSES set the state o redux store with ta data from database
