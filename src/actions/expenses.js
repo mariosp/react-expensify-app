@@ -1,6 +1,6 @@
 import uuid from 'uuid';
 import database from '../firebase/firebase';
- 
+
 // ADD_EXPENSE
 export const addExpense = (expense) => ({
     type: 'ADD_EXPENSE',
@@ -8,8 +8,9 @@ export const addExpense = (expense) => ({
   });
  
   export const startAddExpense = (expenseData = {}) => {
-    return (dispatch) => {
-        const {
+    return (dispatch,getState) => {
+      const uid =getState().auth.uid;  
+      const {
           description = '',
           note = '',
           amount = 0,
@@ -18,7 +19,7 @@ export const addExpense = (expense) => ({
 
         const expense = {description,note,amount,createdAt};
 
-        database.ref('expense').push(expense).then((ref)=>{
+        database.ref('users/'+uid+'/expenses').push(expense).then((ref)=>{
 
           dispatch(addExpense(
             {
@@ -88,9 +89,9 @@ export const addExpense = (expense) => ({
 
   //START_SET_EXPSENSES 
   export const startSetExpenses = () => {
-    return (dispatch) => {
-
-      return database.ref('expense').once('value').then((snapshot)=>
+    return (dispatch,getState) => {
+      const uid =getState().auth.uid;
+      return database.ref('users/'+uid+'/expenses').once('value').then((snapshot)=>
       {
 
         const expenses = [];
