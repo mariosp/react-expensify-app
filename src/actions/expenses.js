@@ -41,9 +41,10 @@ export const addExpense = (expense) => ({
   //START REMOVE_EXPENSE
   export const startRemoveExpense = ({id}={}) =>{
 
-    return (dispatch)=>{
+    return (dispatch,getState)=>{
+      const uid =getState().auth.uid;
 
-      return database.ref('expense/'+id).remove().then(()=>{
+      return database.ref('users/'+uid+'/expenses/'+id).remove().then(()=>{
 
         dispatch(removeExpense({id}));
 
@@ -64,9 +65,10 @@ export const addExpense = (expense) => ({
   //START EDIT_EXPENSE
   export const startEditExpense = (id,updates) =>{
 
-    return (dispatch)=>{
-
-      return database.ref('expense/'+id).update(updates).then(()=>{
+    return (dispatch,getState)=>{
+      const uid =getState().auth.uid;
+      
+      return database.ref('users/'+uid+'/expenses/'+id).update(updates).then(()=>{
 
         dispatch(editExpense(id,updates));
 
