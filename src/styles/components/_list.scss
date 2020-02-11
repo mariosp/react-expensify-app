@@ -1,0 +1,30 @@
+
+.list-header{
+    background: $off-white;
+    border: 1px solid darken($off-white,7%);
+    color: grey;
+    display: flex;
+    justify-content: space-between;
+    padding: $s-size $m-size;
+}
+
+.list-item{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid darken($off-white, 7%);
+    border-top: none;
+    color: grey;
+    text-decoration: none;
+    padding : $s-size;
+
+    transition:  background .3s ease;
+    &:hover {
+        background: $off-white;
+    }
+    @media (min-width : $desktop-breakpoint){
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        padding : $m-size;
+    }
+}
