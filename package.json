@@ -4,6 +4,10 @@
   "main": "index.js",
   "author": "marios patsis",
   "license": "MIT",
+  "engines": {
+    "node": "10.19.0",
+    "npm": "6.13.4"
+  },
   "scripts": {
     "serve": "live-server public/",
     "build:dev": "webpack",
@@ -49,6 +53,7 @@
     "webpack": "^4.41.5"
   },
   "devDependencies": {
+    "dotenv": "^8.2.0",
     "enzyme": "3.0.0",
     "enzyme-adapter-react-16": "1.0.0",
     "enzyme-to-json": "3.0.1",
