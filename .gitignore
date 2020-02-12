@@ -2,3 +2,7 @@ node_modules/
 public/dist/
 
 .idea/
+
+#enviroments
+.env
+.env.modify
